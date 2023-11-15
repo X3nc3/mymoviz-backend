@@ -10,7 +10,7 @@ router.get("/movies", (req, res) => {
     .then((response) => response.json())
     .then((findMovies) => {
       if (findMovies.results.length > 0) {
-        res.json({ findMovies });
+        res.json({ movies: findMovies.results });
       } else {
         res.json({ error: "Not movies find!" });
       }
