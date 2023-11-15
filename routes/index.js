@@ -3,7 +3,7 @@ var router = express.Router();
 
 const APIKEY = process.env.KEY_API;
 
-router.get("/movie", (req, res) => {
+router.get("/movies", (req, res) => {
   fetch(
     `https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKEY}&language=fr-FR`
   )

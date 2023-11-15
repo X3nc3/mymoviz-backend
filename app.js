@@ -8,8 +8,11 @@ var indexRouter = require("./routes/index");
 
 var app = express();
 
-const cors = require("cors");
-app.use(cors());
+const corsOptions = {
+    origin: "*",
+  };
+const app = express();
+app.use(cors(corsOptions));
 
 app.use(logger("dev"));
 app.use(express.json());
