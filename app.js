@@ -8,10 +8,12 @@ var indexRouter = require("./routes/index");
 
 var app = express();
 
-const corsOptions = {
-    origin: "*",
-  };
-const app = express();
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+const cors = require('cors');
 app.use(cors(corsOptions));
 
 app.use(logger("dev"));
